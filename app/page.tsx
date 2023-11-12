@@ -160,7 +160,7 @@ const Member = ({ data }: { data: (typeof members)[0] }) => {
       </div>
       <Chip
         size="lg"
-        className="font-agbalumo text-background text-center text-xl"
+        className="font-agbalumo text-primary text-center text-xl"
         classNames={{ base: "max-w-full" }}
         color="secondary"
         variant="shadow"
