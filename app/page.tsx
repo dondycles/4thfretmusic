@@ -17,7 +17,8 @@ import {
   SlSocialYoutube,
 } from "react-icons/sl";
 import Member from "@/components/Member";
-export const members = [
+
+const members = [
   {
     name: "Win",
     roles: [

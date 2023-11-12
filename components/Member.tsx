@@ -1,8 +1,7 @@
 import { Chip } from "@nextui-org/react";
 import Image from "next/image";
 
-import { members } from "@/app/page";
-export default function Member({ data }: { data: (typeof members)[0] }) {
+export default function Member({ data }: { data: any }) {
   return (
     <div className="relative bg-primary/5 w-screen max-w-[240px] rounded-lg overflow-hidden flex flex-col gap-2 self-stretch">
       <div className="rounded overflow-hidden">
@@ -18,7 +17,7 @@ export default function Member({ data }: { data: (typeof members)[0] }) {
           {data.name}
         </Chip>
         <p className="  bottom-4  z-10 flex flex-wrap gap-1 justify-center text-xs">
-          {data.roles.map((role) => {
+          {data.roles.map((role: any) => {
             return (
               <span className=" pr-2  flex items-center gap-1">{role}</span>
             );
