@@ -4,7 +4,7 @@ import fflogo from "@/public/4flogo.png";
 import Image from "next/image";
 export default function Nav() {
   return (
-    <nav className="w-full py-4 md:py-8  px-4 sm:px-16 md:px-32 lg:px-64 flex justify-between border-b-[1px] border-primary/20">
+    <nav className="w-full py-4 md:py-8  px-4 sm:px-16 md:px-32 lg:px-64 flex justify-between border-b-[1px] border-primary/20 z-50 backdrop-blur-sm">
       <Link href="/" color="primary">
         <Image
           alt="4th Fret"

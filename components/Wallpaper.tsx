@@ -7,7 +7,7 @@ export default function Wallpaper() {
       <Image
         alt="4th Fret"
         src={bg}
-        className=" object-cover h-full opacity-10 blur-[1px]"
+        className=" object-cover h-full opacity-10"
       />
     </div>
   );
