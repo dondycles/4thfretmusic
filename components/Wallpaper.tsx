@@ -1,0 +1,14 @@
+"use client";
+import bg from "@/public/bg.jpg";
+import Image from "next/image";
+export default function Wallpaper() {
+  return (
+    <div className="fixed top-0 left-0 h-screen w-full z-0">
+      <Image
+        alt="4th Fret"
+        src={bg}
+        className=" object-cover h-full opacity-10 blur-[1px]"
+      />
+    </div>
+  );
+}

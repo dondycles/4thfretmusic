@@ -2,6 +2,7 @@
 "use client";
 
 import Nav from "@/components/Nav";
+import Wallpaper from "@/components/Wallpaper";
 import { useTheme } from "@/store";
 import { NextUIProvider } from "@nextui-org/react";
 import { useEffect, useState } from "react";
@@ -23,6 +24,7 @@ export function Providers({ children }: { children: React.ReactNode }) {
       >
         <Nav />
         {children}
+        <Wallpaper />
       </NextUIProvider>
     );
 }

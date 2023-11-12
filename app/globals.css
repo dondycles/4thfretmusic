@@ -6,3 +6,20 @@
   @apply scrollbar-thin scrollbar-track-transparent scrollbar-thumb-primary;
   scroll-behavior: smooth;
 }
+
+#dot {
+  --parallax-speed: 1;
+  animation: parallax linear;
+  animation-timeline: scroll();
+}
+#dott {
+  --parallax-speed: 2;
+  animation: parallax linear;
+  animation-timeline: scroll();
+}
+
+@keyframes parallax {
+  to {
+    transform: translateY(calc(var(--parallax-speed) * 200px));
+  }
+}

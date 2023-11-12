@@ -16,7 +16,8 @@ import {
   SlSocialSpotify,
   SlSocialYoutube,
 } from "react-icons/sl";
-const members = [
+import Member from "@/components/Member";
+export const members = [
   {
     name: "Win",
     roles: [
@@ -93,7 +94,7 @@ const members = [
 
 export default function Home() {
   return (
-    <main className="max-h-[100dvh] h-screen overflow-auto w-full  px-2 sm:px-16 md:px-32 lg:px-64">
+    <main className="max-h-[100dvh] h-screen overflow-auto w-full  px-2 sm:px-16 md:px-32 lg:px-64 z-10">
       <div className="max-h-full h-screen w-full flex">
         <div className="m-auto flex flex-row gap-4 max-w-[800px] items-end ">
           <div className="h-auto w-32 relative -rotate-12">
@@ -138,7 +139,6 @@ export default function Home() {
           })}
         </div>
       </div>
-
       <div className="py-8 text-xs text-center flex flex-col gap-4">
         <Divider />
         <div className="flex flex-row gap-4 justify-center">
@@ -169,30 +169,3 @@ export default function Home() {
     </main>
   );
 }
-
-const Member = ({ data }: { data: (typeof members)[0] }) => {
-  return (
-    <div className="relative bg-primary/5 w-screen max-w-[240px] rounded-lg overflow-hidden flex flex-col gap-2 self-stretch">
-      <div className="rounded overflow-hidden">
-        <Image src={data.img} alt={data.name} quality={100} priority />
-      </div>
-      <div className="absolute bottom-0 left-0 right-0 flex flex-col w-full bg-gradient-to-b from-transparent to-primary/90 p-2 gap-2">
-        <Chip
-          size="lg"
-          className="font-agbalumo bg-background/50 text-white text-center text-xl"
-          classNames={{ base: "max-w-full" }}
-          color="default"
-        >
-          {data.name}
-        </Chip>
-        <p className="  bottom-4  z-10 flex flex-wrap gap-1 justify-center text-xs">
-          {data.roles.map((role) => {
-            return (
-              <span className=" pr-2  flex items-center gap-1">{role}</span>
-            );
-          })}
-        </p>
-      </div>
-    </div>
-  );
-};
