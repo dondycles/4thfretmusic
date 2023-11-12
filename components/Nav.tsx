@@ -21,8 +21,13 @@ export default function Nav() {
         radius="full"
         className="gap-[1px]"
       >
-        <Button className="font-bold text-xs uppercase">Songs</Button>
-        <Button className="font-bold text-xs uppercase">Events</Button>
+        <Button
+          as={Link}
+          href="#discography"
+          className="font-bold text-xs uppercase"
+        >
+          Discography
+        </Button>
         <Button
           as={Link}
           href="#members"

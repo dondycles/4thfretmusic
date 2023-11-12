@@ -109,6 +109,23 @@ export default function Home() {
         </div>
       </div>
       <div
+        id="discography"
+        className="min-h-full h-full w-full flex flex-col justify-center items-center gap-4 py-4"
+      >
+        <p className="font-black text-3xl text-primary text-center w-full font-agbalumo">
+          Discography
+        </p>
+        <iframe
+          style={{ borderRadius: 12 }}
+          src="https://open.spotify.com/embed/artist/4C31P0YmYe8vj5p8wP5GXS?utm_source=generator&theme=0"
+          width="100%"
+          height="100%"
+          allowFullScreen
+          allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+          loading="lazy"
+        />
+      </div>
+      <div
         id="members"
         className="min-h-full w-full flex flex-col justify-center items-center gap-4 py-4"
       >
@@ -121,6 +138,7 @@ export default function Home() {
           })}
         </div>
       </div>
+
       <div className="py-8 text-xs text-center flex flex-col gap-4">
         <Divider />
         <div className="flex flex-row gap-4 justify-center">
@@ -154,24 +172,27 @@ export default function Home() {
 
 const Member = ({ data }: { data: (typeof members)[0] }) => {
   return (
-    <div className="bg-primary/5 p-2 w-screen max-w-[240px] rounded flex flex-col gap-2 self-stretch">
+    <div className="relative bg-primary/5 w-screen max-w-[240px] rounded-lg overflow-hidden flex flex-col gap-2 self-stretch">
       <div className="rounded overflow-hidden">
         <Image src={data.img} alt={data.name} quality={100} priority />
       </div>
-      <Chip
-        size="lg"
-        className="font-agbalumo text-primary text-center text-xl"
-        classNames={{ base: "max-w-full" }}
-        color="secondary"
-        variant="shadow"
-      >
-        {data.name}
-      </Chip>
-      <p className="flex flex-wrap gap-1 justify-center text-xs">
-        {data.roles.map((role) => {
-          return <span className=" pr-2  flex items-center gap-1">{role}</span>;
-        })}
-      </p>
+      <div className="absolute bottom-0 left-0 right-0 flex flex-col w-full bg-gradient-to-b from-transparent to-primary/90 p-2 gap-2">
+        <Chip
+          size="lg"
+          className="font-agbalumo bg-background/50 text-white text-center text-xl"
+          classNames={{ base: "max-w-full" }}
+          color="default"
+        >
+          {data.name}
+        </Chip>
+        <p className="  bottom-4  z-10 flex flex-wrap gap-1 justify-center text-xs">
+          {data.roles.map((role) => {
+            return (
+              <span className=" pr-2  flex items-center gap-1">{role}</span>
+            );
+          })}
+        </p>
+      </div>
     </div>
   );
 };

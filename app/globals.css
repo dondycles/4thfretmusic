@@ -4,4 +4,5 @@
 
 * {
   @apply scrollbar-thin scrollbar-track-transparent scrollbar-thumb-primary;
+  scroll-behavior: smooth;
 }
