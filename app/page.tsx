@@ -125,21 +125,21 @@ export default function Home() {
         <Divider />
         <div className="flex flex-row gap-4 justify-center">
           <Link
-            className="text-foreground text-3xl"
+            className="text-foreground text-2xl"
             href="https://www.facebook.com/4thfretmusic"
             target="_blank"
           >
             <SlSocialFacebook />
           </Link>
           <Link
-            className="text-foreground text-3xl"
+            className="text-foreground text-2xl"
             href="https://open.spotify.com/artist/4C31P0YmYe8vj5p8wP5GXS?si=45aBALyET7yzNbWFmnMQBA"
             target="_blank"
           >
             <SlSocialSpotify />
           </Link>
           <Link
-            className="text-foreground text-3xl"
+            className="text-foreground text-2xl"
             href="https://youtube.com/4thfretmusic"
             target="_blank"
           >
