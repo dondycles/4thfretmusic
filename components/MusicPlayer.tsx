@@ -9,7 +9,7 @@ import {
   PiSkipBackBold,
   PiStopBold,
 } from "react-icons/pi";
-import { MdMusicOff } from "react-icons/md";
+import { MdMusicNote, MdMusicOff } from "react-icons/md";
 
 import { motion as m, AnimatePresence } from "framer-motion";
 
@@ -186,11 +186,13 @@ export default function MusicPlayer() {
                 audio.current?.play();
                 setPlayerStatus("playing");
               }}
+              variant={playerStatus === "playing" ? "shadow" : "solid"}
+              color="primary"
               isIconOnly
               radius="full"
-              className="fixed bottom-4 md:bottom-8  bg-primary/25  left-4 sm:left-16 md:left-32 lg:left-64 z-10 flex flex-row gap-1 justify-center items-center p-1 max-w-[264px]"
+              className="fixed bottom-4 md:bottom-8  bg-primary/25  left-4 sm:left-16 md:left-32 lg:left-64 z-10 flex flex-row gap-1 justify-center items-center p-1 max-w-[264px] text-lg"
             >
-              <MdMusicOff />
+              {playerStatus === "playing" ? <MdMusicNote /> : <MdMusicOff />}
             </Button>
           </Tooltip>
         )}
