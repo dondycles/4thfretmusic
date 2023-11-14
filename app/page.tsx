@@ -1,97 +1,16 @@
 import fflogo from "@/public/4flogo.png";
 import { Chip, Divider, Link } from "@nextui-org/react";
 import Image from "next/image";
-import kenu from "@/public/kenu.jpg";
-import gab from "@/public/gab.jpg";
-import dondy from "@/public/dondy.jpg";
-import geno from "@/public/geno.jpg";
-import win from "@/public/win.jpg";
 
-import { TbMicrophone2 } from "react-icons/tb";
-import { FaDrum } from "react-icons/fa";
-import { GiGuitarBassHead, GiGuitarHead } from "react-icons/gi";
-import { PiPianoKeysFill } from "react-icons/pi";
 import {
   SlSocialFacebook,
   SlSocialSpotify,
   SlSocialYoutube,
 } from "react-icons/sl";
 import Member from "@/components/Member";
-
-const members = [
-  {
-    name: "Win",
-    roles: [
-      <>
-        Vocals{" "}
-        <span className="text-xl">
-          <TbMicrophone2 />
-        </span>
-      </>,
-      <>
-        Lead Guitarist{" "}
-        <span className="text-xl">
-          <GiGuitarHead />
-        </span>
-      </>,
-    ],
-    img: win,
-  },
-  {
-    name: "Geno",
-    roles: [
-      <>
-        Vocals{" "}
-        <span className="text-xl">
-          <TbMicrophone2 />
-        </span>
-      </>,
-      <>
-        Rythm Guitarist{" "}
-        <span className="text-xl">
-          <GiGuitarHead />
-        </span>
-      </>,
-    ],
-    img: geno,
-  },
-  {
-    name: "Gab",
-    roles: [
-      <>
-        Bassist{" "}
-        <span className="text-xl">
-          <GiGuitarBassHead />
-        </span>
-      </>,
-    ],
-    img: gab,
-  },
-  {
-    name: "Kenu",
-    roles: [
-      <>
-        Drummer{" "}
-        <span className="text-xl">
-          <FaDrum />
-        </span>
-      </>,
-    ],
-    img: kenu,
-  },
-  {
-    name: "Dondy",
-    roles: [
-      <>
-        Keyboardist{" "}
-        <span className="text-xl">
-          <PiPianoKeysFill />
-        </span>
-      </>,
-    ],
-    img: dondy,
-  },
-];
+import { songs } from "@/data/songs";
+import { members } from "@/data/members";
+import Song from "@/components/Song";
 
 export default function Home() {
   return (
@@ -112,12 +31,12 @@ export default function Home() {
       </div>
       <div
         id="discography"
-        className="min-h-full h-full w-full flex flex-col justify-center items-center gap-4 py-4"
+        className="min-h-full  w-full flex flex-col justify-center items-center gap-4 py-4"
       >
         <p className="font-black text-3xl text-primary text-center w-full font-agbalumo">
           Discography
         </p>
-        <iframe
+        {/* <iframe
           style={{ borderRadius: 12 }}
           src="https://open.spotify.com/embed/artist/4C31P0YmYe8vj5p8wP5GXS?utm_source=generator&theme=0"
           width="100%"
@@ -125,7 +44,12 @@ export default function Home() {
           allowFullScreen
           allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
           loading="lazy"
-        />
+        /> */}
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-4">
+          {songs.map((song) => {
+            return <Song song={song} key={song.title} />;
+          })}
+        </div>
       </div>
       <div
         id="members"

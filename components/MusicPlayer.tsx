@@ -14,37 +14,15 @@ import { MdMusicNote, MdMusicOff } from "react-icons/md";
 import { motion as m, AnimatePresence } from "framer-motion";
 
 import Marquee from "react-fast-marquee";
-import aurora from "@/public/artworks/aurora.webp";
-import ekis from "@/public/artworks/ekis.webp";
-import ginagabi from "@/public/artworks/ginagabi.webp";
-import kungalammolang from "@/public/artworks/kungalammolang.webp";
-import marinig from "@/public/artworks/marinig.webp";
-import salamin from "@/public/artworks/salamin.webp";
-import wendy from "@/public/artworks/wendy.webp";
-import winterinmanila from "@/public/artworks/winterinmanila.webp";
+
 import Image from "next/image";
 import { useAudioPlayer } from "@/store";
+import { songs } from "@/data/songs";
+
 export default function MusicPlayer() {
   const audioPlayer = useAudioPlayer();
   const audio = useRef<HTMLAudioElement>(null);
-  const songs = [
-    { title: "Aurora", src: "../audios/aurora.mp3", art: aurora },
-    { title: "Ekis", src: "../audios/ekis.mp3", art: ekis },
-    { title: "Ginagabi", src: "../audios/ginagabi.mp3", art: ginagabi },
-    {
-      title: "Kung Alam Mo Lang",
-      src: "../audios/kungalammolang.mp3",
-      art: kungalammolang,
-    },
-    { title: "Marinig", src: "../audios/marinig.mp3", art: marinig },
-    { title: "Salamin", src: "../audios/salamin.mp3", art: salamin },
-    { title: "Wendy", src: "../audios/wendy.mp3", art: wendy },
-    {
-      title: "Winter In Manila ",
-      src: "../audios/winterinmanila.mp3",
-      art: winterinmanila,
-    },
-  ];
+
   const [songIndex, setSongIndex] = useState(0);
   const [isPlaying, setIsPlaying] = useState(false);
   const [playerStatus, setPlayerStatus] = useState<
