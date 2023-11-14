@@ -15,3 +15,13 @@ export const useTheme = create<Theme>()(
     { name: "theme" }
   )
 );
+
+type AudioPlayer = {
+  isOpen: boolean;
+  openPlayer: (mode: boolean) => void;
+};
+
+export const useAudioPlayer = create<AudioPlayer>()((set) => ({
+  isOpen: false,
+  openPlayer: (currentMode) => set((state) => ({ isOpen: currentMode })),
+}));
