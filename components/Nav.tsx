@@ -1,8 +1,20 @@
 "use client";
-import { Button, ButtonGroup, Link } from "@nextui-org/react";
+import {
+  Button,
+  ButtonGroup,
+  Dropdown,
+  DropdownItem,
+  DropdownMenu,
+  DropdownTrigger,
+  Link,
+} from "@nextui-org/react";
 import fflogo from "@/public/4flogo.png";
 import Image from "next/image";
+import { songs } from "@/data/songs";
+import { useTheme } from "@/store";
+import { FaLightbulb, FaMoon } from "react-icons/fa";
 export default function Nav() {
+  const theme = useTheme();
   return (
     <nav className="w-full py-4 md:py-8  px-4 sm:px-16 md:px-32 lg:px-64 flex justify-between border-b-[1px] border-primary/20 z-50 backdrop-blur-sm">
       <Link href="/" color="primary">
@@ -21,11 +33,46 @@ export default function Nav() {
         radius="full"
         className="gap-[1px]"
       >
-        <Button as={Link} href="/#discography" className="font-bold text-xs ">
-          Discography
+        <Button as={Link} href="/" className="font-bold text-xs text-white">
+          HOME
         </Button>
-        <Button as={Link} href="/#members" className="font-bold text-xs ">
-          Members
+        <Dropdown showArrow>
+          <DropdownTrigger>
+            <Button
+              as={Link}
+              href="/#members"
+              className="font-bold text-xs text-white"
+            >
+              LYRICS
+            </Button>
+          </DropdownTrigger>
+          <DropdownMenu>
+            {songs.map((song) => {
+              return (
+                <DropdownItem
+                  as={Link}
+                  href={
+                    "/lyrics/" + song.title.toLowerCase().replace(/\s/g, "")
+                  }
+                  variant="shadow"
+                  color="primary"
+                  key={song.title}
+                  className="hover:text-white"
+                >
+                  {song.title}
+                </DropdownItem>
+              );
+            })}
+          </DropdownMenu>
+        </Dropdown>
+        <Button
+          onClick={() => {
+            theme.toggleMode(theme.mode === "dark" ? "light" : "dark");
+          }}
+          className="text-white"
+          isIconOnly
+        >
+          {theme.mode === "light" ? <FaLightbulb /> : <FaMoon />}
         </Button>
       </ButtonGroup>
     </nav>

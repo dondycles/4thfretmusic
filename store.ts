@@ -2,15 +2,14 @@ import { create } from "zustand";
 import { persist } from "zustand/middleware";
 
 type Theme = {
-  isDarkMode: boolean;
+  mode: "dark" | "light";
   toggleMode: (mode: "dark" | "light") => void;
 };
 export const useTheme = create<Theme>()(
   persist(
     (set) => ({
-      isDarkMode: true,
-      toggleMode: (currentMode) =>
-        set((state) => ({ isDarkMode: !currentMode })),
+      mode: "dark",
+      toggleMode: (currentMode) => set((state) => ({ mode: currentMode })),
     }),
     { name: "theme" }
   )

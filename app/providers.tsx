@@ -28,7 +28,7 @@ export function Providers({ children }: { children: React.ReactNode }) {
           audioPlayer.openPlayer(false);
         }}
         className={`
-      ${theme.isDarkMode ? "dark" : "light"} 
+      ${theme.mode} 
       bg-gradient-to-b from-background to-primary/20 text-foreground bg-background/90 max-h-[100dvh] w-full h-screen flex flex-col text-sm sm:text-base `}
       >
         <Nav />

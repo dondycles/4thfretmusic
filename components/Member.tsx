@@ -14,12 +14,14 @@ export default function Member({ data }: { data: any }) {
           classNames={{ base: "max-w-full" }}
           color="default"
         >
-          {data.name}
+          <p>{data.name}</p>
         </Chip>
         <p className="  bottom-4  z-10 flex flex-wrap gap-1 justify-center text-xs">
           {data.roles.map((role: any) => {
             return (
-              <span className=" pr-2  flex items-center gap-1">{role}</span>
+              <span className=" pr-2  flex items-center gap-1 text-white">
+                {role}
+              </span>
             );
           })}
         </p>
