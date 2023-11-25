@@ -38,9 +38,7 @@ export default function Nav() {
         </Button>
         <Dropdown showArrow>
           <DropdownTrigger>
-            <Button
-              as={Link}
-              href="/#members"
+            <Button              
               className="font-bold text-xs text-white"
             >
               LYRICS
