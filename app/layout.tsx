@@ -6,7 +6,40 @@ import { Agbalumo } from "next/font/google";
 
 export const metadata: Metadata = {
   title: "4th Fret",
-  description: "A pop rock band in Manila.",
+  description:
+    "A vibrant and energetic boy band based in Manila, creating fresh music that resonates with fans worldwide.",
+  metadataBase: new URL("https://4thfretmusic.com"),
+  twitter: {
+    title: "4th Fret",
+    description:
+      "A vibrant and energetic boy band based in Manila, creating fresh music that resonates with fans worldwide.",
+    card: "summary_large_image",
+    creator: "@dondycles",
+    images: {
+      url: "/images/summary.png",
+      alt: "4thfret",
+    },
+  },
+  openGraph: {
+    title: "4th Fret",
+    description:
+      "A vibrant and energetic boy band based in Manila, creating fresh music that resonates with fans worldwide.",
+    type: "website",
+    siteName: "4th Fret",
+    url: "https://4thfretmusic.com",
+    images: [
+      {
+        url: "/bg.jpg",
+        width: 800,
+        height: 800,
+      },
+      {
+        url: "/bg.jpg",
+        width: 1920,
+        height: 1080,
+      },
+    ],
+  },
 };
 
 const agbalumo = Agbalumo({
