@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     creator: "@dondycles",
     images: {
-      url: "/images/summary.png",
+      url: "/bg.jpg",
       alt: "4thfret",
     },
   },
