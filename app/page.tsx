@@ -14,8 +14,8 @@ import Song from "@/components/Song";
 
 export default function Home() {
   return (
-    <main className="max-h-[100dvh] h-screen overflow-auto w-full  px-2 sm:px-16 md:px-32 lg:px-64 z-10">
-      <div className="max-h-full h-screen w-full flex">
+    <div className="min-h- fit w-full px-4 sm:px-16 md:px-32 lg:px-64 z-10">
+      <div className="w-full min-h-fit h-[calc(100dvh-78px)] flex">
         <div className="m-auto flex flex-row gap-4 max-w-[800px] items-end ">
           <div className="h-auto w-32 relative -rotate-12">
             <Image alt="4th Fret" src={fflogo} quality={100} />
@@ -31,20 +31,11 @@ export default function Home() {
       </div>
       <div
         id="discography"
-        className="min-h-full  w-full flex flex-col justify-center items-center gap-4 py-4"
+        className="   w-full flex flex-col justify-center items-center gap-4 py-4"
       >
         <p className="font-black text-3xl text-primary text-center w-full font-agbalumo">
           Discography
         </p>
-        {/* <iframe
-          style={{ borderRadius: 12 }}
-          src="https://open.spotify.com/embed/artist/4C31P0YmYe8vj5p8wP5GXS?utm_source=generator&theme=0"
-          width="100%"
-          height="100%"
-          allowFullScreen
-          allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-          loading="lazy"
-        /> */}
         <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-4">
           {songs.map((song) => {
             return <Song song={song} key={song.title} />;
@@ -53,7 +44,7 @@ export default function Home() {
       </div>
       <div
         id="members"
-        className="min-h-full w-full flex flex-col justify-center items-center gap-4 py-4"
+        className=" w-full flex flex-col justify-center items-center gap-4 py-4"
       >
         <p className="font-black text-3xl text-primary text-center w-full font-agbalumo">
           Meet The Band
@@ -64,33 +55,6 @@ export default function Home() {
           })}
         </div>
       </div>
-      <div className="py-8 text-xs text-center flex flex-col gap-4">
-        <Divider />
-        <div className="flex flex-row gap-4 justify-center">
-          <Link
-            className="text-foreground text-2xl"
-            href="https://www.facebook.com/4thfretmusic"
-            target="_blank"
-          >
-            <SlSocialFacebook />
-          </Link>
-          <Link
-            className="text-foreground text-2xl"
-            href="https://open.spotify.com/artist/4C31P0YmYe8vj5p8wP5GXS?si=45aBALyET7yzNbWFmnMQBA"
-            target="_blank"
-          >
-            <SlSocialSpotify />
-          </Link>
-          <Link
-            className="text-foreground text-2xl"
-            href="https://youtube.com/4thfretmusic"
-            target="_blank"
-          >
-            <SlSocialYoutube />
-          </Link>
-        </div>
-        <p>4th Fret | 2023</p>
-      </div>
-    </main>
+    </div>
   );
 }
