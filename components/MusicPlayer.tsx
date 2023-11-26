@@ -29,6 +29,8 @@ export default function MusicPlayer() {
     "playing" | "paused" | "stopped"
   >("stopped");
 
+  const [didOpen, setDidOpen] = useState(false);
+
   const controls = [
     {
       icon: <PiSkipBackBold />,
@@ -155,7 +157,7 @@ export default function MusicPlayer() {
             size="sm"
             showArrow
             color="primary"
-            isOpen={playerStatus === "stopped"}
+            isOpen={!didOpen}
           >
             <Button
               onClick={() => {
@@ -163,12 +165,13 @@ export default function MusicPlayer() {
                 if (playerStatus === "playing") return;
                 audio.current?.play();
                 setPlayerStatus("playing");
+                setDidOpen(true);
               }}
               variant={playerStatus === "playing" ? "shadow" : "solid"}
               color="primary"
               isIconOnly
               radius="full"
-              className="fixed bottom-4 md:bottom-8  bg-primary/25  left-4 sm:left-16 md:left-32 lg:left-64 z-10 flex flex-row gap-1 justify-center items-center p-1 max-w-[264px] text-lg"
+              className="fixed bottom-4 md:bottom-8  bg-primary  left-4 sm:left-16 md:left-32 lg:left-64 z-10 flex flex-row gap-1 justify-center items-center p-1 max-w-[264px] text-lg"
             >
               {playerStatus === "playing" ? <MdMusicNote /> : <MdMusicOff />}
             </Button>
