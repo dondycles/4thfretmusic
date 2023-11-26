@@ -89,7 +89,7 @@ export default function MusicPlayer() {
 
   return (
     <>
-      <audio ref={audio} src={songs[songIndex].src} autoPlay hidden />
+      <audio ref={audio} src={songs[songIndex].src} autoPlay={false} hidden />
       <AnimatePresence mode="popLayout">
         {audioPlayer.isOpen ? (
           <m.div
