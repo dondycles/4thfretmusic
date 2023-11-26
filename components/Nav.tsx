@@ -38,11 +38,7 @@ export default function Nav() {
         </Button>
         <Dropdown showArrow>
           <DropdownTrigger>
-            <Button              
-              className="font-bold text-xs text-white"
-            >
-              LYRICS
-            </Button>
+            <Button className="font-bold text-xs text-white">LYRICS</Button>
           </DropdownTrigger>
           <DropdownMenu>
             {songs.map((song) => {
