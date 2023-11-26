@@ -37,7 +37,7 @@ export default function Song({ song }: { song: any }) {
             <Link
               size="sm"
               className=" w-fit text-xs flex gap-1 text-white"
-              href={"/lyrics/" + song.title.toLowerCase().replace(/\s/g, "")}
+              href={"/" + song.title.toLowerCase().replace(/\s/g, "")}
             >
               See full lyrics <FaExternalLinkAlt />
             </Link>

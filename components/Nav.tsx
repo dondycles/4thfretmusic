@@ -45,9 +45,7 @@ export default function Nav() {
               return (
                 <DropdownItem
                   as={Link}
-                  href={
-                    "/lyrics/" + song.title.toLowerCase().replace(/\s/g, "")
-                  }
+                  href={"/" + song.title.toLowerCase().replace(/\s/g, "")}
                   variant="shadow"
                   color="primary"
                   key={song.title}
